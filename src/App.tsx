@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
+import Main from './components/pages/Main/Main';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -21,8 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Main/>
     </div>
   );
 }

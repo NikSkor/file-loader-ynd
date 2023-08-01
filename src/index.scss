@@ -111,7 +111,7 @@ body {
   font-size: 14px;
   line-height: 150%;
   background-color: $bg-color;
-  color: $font-color;
+  color: $mainColor;
   // font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
@@ -168,11 +168,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 input[type="number"]:hover,
 input[type="number"]:focus {
   -moz-appearance: number-input;
+  appearance: number-input;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -181,29 +183,3 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.visually-hidden {
-  position: fixed;
-  transform: scale(0);
-}
-
-.container {
-  --max-width: 1366px;
-  --padding: 30px;
-  max-width: calc(var(--max-width) + var(--padding) * 2);
-  padding: 0 var(--padding);
-  margin: 0 auto;
-
-  @include laptop {
-    --max-width: 950px;
-    --padding: 25px;
-  }
-
-  @include tablet {
-    --max-width: 680px;
-    --padding: 20px;
-  }
-
-  @include mobile {
-    --padding: 15px;
-  }
-}
