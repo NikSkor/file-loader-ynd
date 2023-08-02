@@ -1,23 +1,25 @@
-import { IUser } from "../../models/IUser";
+
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
+// interface INameObj {
+//   id: number,
+//   file: File
+// }
 
-interface UserState {
-  users: IUser[],
-  isLoading: boolean,
+interface IUserState {
+  filesList: File[],
 }
 
-const initialState = {
-  users: [],
-  isLoading: false,
+const initialState: IUserState = {
+  filesList: []
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
     reducers: {
-      addNewBool(state, action: PayloadAction<boolean>) {
-        state.isLoading = action.payload;
+      addFiles(state, action: PayloadAction<File>) {
+        state.filesList.push(action.payload);
       }
   }
 });
