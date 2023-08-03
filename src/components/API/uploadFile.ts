@@ -1,6 +1,5 @@
 import axios from "axios";
-import { URL_API } from "./const";
-
+import { URL_API, token } from "./const";
 interface INameObj {
   id: string,
   file: File
@@ -20,15 +19,16 @@ export const uploadFile = async (fileList: INameObj[]) => {
           },
           headers: {
             Authorization:
-              'OAuth y0_AgAAAAAAuZgcAADLWwAAAADpTQDR5aRGEktlRF6krySp7iY4p1Q4DSM',
+              `OAuth ${token}`,
           },
         });
 
         await axios.put(response.data.href, formData);
-        console.log('Returned data:', response);
       } catch (e) {
-        console.log(`Axios request failed: ${e}`);
-        throw new Error(`Axios request failed: ${e}`);
+        console.log(e);
+        // throw new Error(`Axios request failed: ${e}`);
+        return {status: true, text: 'Ошибка загрузки файлов'};
     }
   }
+  return {status: true, text: 'Файлы успешно загружены'};
 };

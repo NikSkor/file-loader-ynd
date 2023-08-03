@@ -1,0 +1,111 @@
+@import '../../vars.scss';
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: $light-gray;
+  width: 400px;
+  min-height: 200px;
+  transform: scale(0.5);
+  transition: all 0.5s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet {
+    width: 380px;
+    min-height: 150px;
+  }
+
+  @include mobile {
+    width: 280px;
+    min-height: 100px;
+  }
+}
+
+.modalContent.active {
+  transform: scale(1);
+}
+
+.modalText {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.btnClose {
+
+  font-weight: 500;
+  font-size: 14px;
+
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 12px 12px;
+
+  border: solid 1px $secondColor;
+  background-color: $secondColor;
+  border-radius: 8px;
+
+  cursor: pointer;
+  text-decoration: none;
+  color: $light-gray;
+
+  transition-property: border-color, background-color;
+  transition-duration: .4s;
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &.square {
+    width: 40px;
+    padding: 0;
+  }
+
+  &:hover {
+    background-color: $font-color;
+    border-color: $font-color;
+  }
+
+  @include tablet {
+    font-size: 12px;
+  }
+}

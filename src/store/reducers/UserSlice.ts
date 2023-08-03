@@ -1,25 +1,18 @@
-
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-
-// interface INameObj {
-//   id: number,
-//   file: File
-// }
-
 interface IUserState {
-  filesList: File[],
+  str: string,
 }
 
 const initialState: IUserState = {
-  filesList: []
+  str: ''
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
     reducers: {
-      addFiles(state, action: PayloadAction<File>) {
-        state.filesList.push(action.payload);
+      addString(state, action: PayloadAction<string>) {
+        state.str = action.payload;
       }
   }
 });
