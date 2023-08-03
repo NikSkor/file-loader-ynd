@@ -2,6 +2,20 @@
 
 .form {
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  min-height: 100vh;
+}
+
+.btnsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 .label {
@@ -11,10 +25,20 @@
   text-align: center;
   cursor: pointer;
   display: block;
-  font: 14px/50px Tahoma;
-  transition: all 0.18s ease-in-out;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.7s ease-in-out;
   border: 1px solid $secondColor;
   color: $secondColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $secondColor;
+    color: #fff;
+  }
 }
 
 .input {
@@ -25,3 +49,28 @@
   position: absolute;
   z-index: -1;
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 450px;
+}
+
+
+
+// .delBtn {
+//   width: 21px;
+//   height: 21px;
+// }
+
+// .icon {
+//   color: $mainColor;
+//   cursor: pointer;
+//   transition: 0.3s color ease-in-out;
+
+//   &:hover {
+//     color: red;
+//   }
+// }
+

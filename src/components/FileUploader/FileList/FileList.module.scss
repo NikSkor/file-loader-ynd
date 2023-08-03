@@ -1,0 +1,40 @@
+.listItem {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delBtn {
+  position: relative;
+  top: 2px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.delBtn::before,
+.delBtn::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #000;
+}
+
+.delBtn::before {
+  transform: rotate(45deg);
+}
+
+.delBtn::after {
+  transform: rotate(-45deg);
+}
